@@ -21,7 +21,7 @@ app.controller('FoodController', ['$http', function ($http) {
     self.newFood.deliciousness_rating = new_deliciousness_rating;
     self.newFood.is_hot = new_is_hot;
     console.log(self.newFood);
-    self.Food.push(angular.copy(self.newFood));
+    self.food.push(angular.copy(self.newFood));
   };
 
   $http({
