@@ -1,9 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const router = express.Router();
-// const Food = require('../models/food.schema');
-// const dataFromDatabase = require('../modules/database-connection');
 const dataFromServerDatabase = require('../modules/food-data.js')
+const router = express.Router();
 
 // get route for /books
 router.get('/', (req, res) => {

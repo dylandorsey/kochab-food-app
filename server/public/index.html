@@ -10,12 +10,28 @@
     <script src="scripts/client.js"></script>
 </head>
 
-<body ng-app="FoodApp">
+<body ng-app="FoodApp" ng-controller="FoodController as vm">
     <main>
         <header>
             <h1>Food app</h1>
-            <div ng-controller="FoodController as vm">
+            <div>
                 <input ng-model="vm.testModel" type="text">{{vm.testModel}}
+            </div>
+            <div class="form-group col-md-6">
+                <label for="foodName">Food Name</label>
+                <input type="text" name="name" class="form-control" ng-model="vm.newFood.name" placeholder="Food name" />
+            </div>
+            <div class="form-group col-md-6">
+                <label for="deliciousnessRating">Deliciousness Rating</label>
+                <input type="text" name="name" class="form-control" ng-model="vm.newFood.deliciousness_rating" placeholder="Deliciousness rating"
+                />
+            </div>
+            <div class="form-group col-md-6">
+                <label for="deliciousnessRating">Is it hot?</label>
+                <input type="text" name="name" class="form-control" ng-model="vm.newFood.is_hot" placeholder="Is it hot? True or False" />
+            </div>
+            <div class="form-group col-md-6">
+                <button ng-click="vm.createFood(vm.newFood.name, vm.newFood.deliciousness_rating, vm.newFood.is_hot)">Submit</button>
             </div>
         </header>
     </main>
