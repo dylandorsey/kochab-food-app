@@ -12,7 +12,7 @@
 
 <body ng-app="FoodApp" ng-controller="FoodController as vm">
     <main>
-        <header>
+        <section>
             <h1>Food app</h1>
             <div>
                 <input ng-model="vm.testModel" type="text">{{vm.testModel}}
@@ -33,7 +33,17 @@
             <div class="form-group col-md-6">
                 <button ng-click="vm.createFood(vm.newFood.name, vm.newFood.deliciousness_rating, vm.newFood.is_hot)">Submit</button>
             </div>
-        </header>
+        </section>
+        <section class="container">
+            <h3>Food List</h3>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="foodObject in vm.food">
+                    <p>Name: {{foodObject.name}}</p> 
+                    <p>Deliciousness rating: {{foodObject.deliciousness_rating}} </p>
+                    <p>Is hot: {{foodObject.is_hot}}</p>
+                </li>
+            </ul>
+        </section>
     </main>
 </body>
 

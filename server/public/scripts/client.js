@@ -6,7 +6,7 @@ app.controller('FoodController', ['$http', function ($http) {
   var self = this; // holds the value of this
   self.testModel = 'this is bound two ways, yo!';
 
-  self.Food = [
+  self.food = [
     {
       "name": "anything you want",
       "deliciousness_rating": "pretty good",
