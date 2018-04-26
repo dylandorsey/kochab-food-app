@@ -5,24 +5,15 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 
+// set route for serving /food
 const food = require('./routes/food.router');
 
-// const databaseUrl = 'mongodb://localHost:27017/food_app';
-// mongoose.connect(databaseUrl);
-// mongoose.connection.on('connected', (error) => {
-//     console.log('mongoose connected on', databaseUrl);
-// })
-// mongoose.connection.on('error', (error) => {
-//     console.log('mongoose connection failed: ', error);
-// });
-
-// Configures bodyParser for jQuery
-// MUST BE DONE BEFORE OUR app.post
 app.use(bodyParser.urlencoded({extended:true})); 
 
 // Serve static files
 app.use(express.static('server/public'));
 
+// Serve /food
 app.use('/food', food);
 
 // Spin up the server
