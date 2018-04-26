@@ -5,6 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const bodyParser = require('body-parser');
 
+const food = require('./routes/food.router');
+
 // const databaseUrl = 'mongodb://localHost:27017/food_app';
 // mongoose.connect(databaseUrl);
 // mongoose.connection.on('connected', (error) => {
@@ -20,6 +22,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 // Serve static files
 app.use(express.static('server/public'));
+
+app.use('/food', food);
 
 // Spin up the server
 app.listen(PORT, () => {
